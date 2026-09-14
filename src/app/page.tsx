@@ -1,69 +1,112 @@
-import Image from "next/image";
+ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="flex flex-col gap-20 py-12 md:py-20 px-4">
+      
+      {/* ================= HERO SECTION ================= */}
+      <section className="text-center max-w-4xl mx-auto flex flex-col items-center gap-6 mt-8 md:mt-12">
+        <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-1.5 rounded-full">
+          Disponibilidad para nuevos proyectos
+        </span>
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Desarrollo Web y Tiendas Online de <span className="text-blue-600 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Alto Rendimiento</span>
+        </h1>
+        <p className="text-lg md:text-xl text-slate-600 max-w-2xl">
+          Construimos plataformas rápidas, seguras y autogestionables. Transformá tus ideas en soluciones web concretas que impulsan ventas y automatizan procesos.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 mt-4">
+          <Link 
+            href="/contacto" 
+            className="bg-slate-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-slate-800 transition-colors shadow-lg shadow-slate-900/20"
+          >
+            Iniciar un Proyecto
+          </Link>
+          <Link 
+            href="/soluciones/tiendas-online" 
+            className="bg-white text-slate-900 border border-slate-200 px-8 py-3 rounded-lg font-medium hover:bg-slate-50 transition-colors"
+          >
+            Ver Soluciones
+          </Link>
+        </div>
+      </section>
+
+      {/* ================= STACK TECNOLÓGICO ================= */}
+      <section className="max-w-5xl mx-auto w-full text-center">
+        <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-8">
+          Arquitectura moderna y escalable
+        </p>
+        <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+          {/* Aquí puedes reemplazar por SVGs reales después */}
+          <span className="font-bold text-xl md:text-2xl">Next.js</span>
+          <span className="font-bold text-xl md:text-2xl">React</span>
+          <span className="font-bold text-xl md:text-2xl">Tailwind CSS</span>
+          <span className="font-bold text-xl md:text-2xl">Node.js</span>
+          <span className="font-bold text-xl md:text-2xl">Supabase</span>
+        </div>
+      </section>
+
+      {/* ================= SOLUCIONES / SILOS SEO ================= */}
+      <section className="max-w-6xl mx-auto w-full grid md:grid-cols-3 gap-6">
+        
+        {/* Card 1: E-commerce */}
+        <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+          <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 text-2xl">
+            🛒
+          </div>
+          <h3 className="text-xl font-bold mb-3">E-commerce y Pagos</h3>
+          <p className="text-slate-600 mb-6 leading-relaxed">
+            Tiendas online optimizadas para conversión con carritos dinámicos, paneles administrativos e integración directa con Mercado Pago y PayPal.
           </p>
+          <Link href="/soluciones/tiendas-online" className="text-blue-600 font-medium hover:underline">
+            Explorar solución →
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Card 2: Web Apps */}
+        <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+          <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6 text-2xl">
+            ⚡
+          </div>
+          <h3 className="text-xl font-bold mb-3">Aplicaciones Web</h3>
+          <p className="text-slate-600 mb-6 leading-relaxed">
+            Desarrollo full-stack a medida. Sistemas de gestión, bases de datos en tiempo real y arquitecturas robustas diseñadas para escalar.
+          </p>
+          <Link href="/soluciones/aplicaciones-web" className="text-blue-600 font-medium hover:underline">
+            Explorar solución →
+          </Link>
         </div>
-      </main>
+
+        {/* Card 3: Integraciones IA */}
+        <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+          <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6 text-2xl">
+            🤖
+          </div>
+          <h3 className="text-xl font-bold mb-3">Integración con IA</h3>
+          <p className="text-slate-600 mb-6 leading-relaxed">
+            Potencia tu negocio con herramientas de inteligencia artificial, automatizaciones y flujos de trabajo inteligentes que ahorran tiempo y recursos.
+          </p>
+          <Link href="/soluciones/desarrollo-ia" className="text-blue-600 font-medium hover:underline">
+            Explorar solución →
+          </Link>
+        </div>
+
+      </section>
+
+      {/* ================= BANNERS CALL TO ACTION ================= */}
+      <section className="max-w-4xl mx-auto w-full bg-slate-900 rounded-3xl p-10 md:p-16 text-center mt-10">
+        <h2 className="text-3xl font-bold text-white mb-4">¿Estás listo para modernizar tu presencia digital?</h2>
+        <p className="text-slate-300 mb-8 max-w-xl mx-auto">
+          Dejá de perder clientes por una web lenta. Hablemos de tus objetivos y construyamos la herramienta exacta que tu negocio necesita.
+        </p>
+        <Link 
+          href="/contacto" 
+          className="inline-block bg-white text-slate-900 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors"
+        >
+          Agendar consulta gratuita
+        </Link>
+      </section>
+
     </div>
   );
 }
